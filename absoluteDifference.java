@@ -7,10 +7,10 @@
       for(int i = 0; i < arr.size(); i++ ){
           right = right + arr.get(i).get(i);  
           left = left + arr.get(arr.size() - i - 1).get(i);
-          }
-          
+          }         
         return Math.abs(right - left);  
-   
     }
+	
+
 	
 	
