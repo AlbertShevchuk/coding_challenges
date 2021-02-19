@@ -9,7 +9,7 @@
           left = left + arr.get(arr.size() - i - 1).get(i);
           }
           
-        return Math.abs(Math.abs(right) - Math.abs(left));  
+        return Math.abs(right - left);  
    
     }
 	
