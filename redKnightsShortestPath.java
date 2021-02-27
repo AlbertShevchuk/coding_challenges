@@ -12,12 +12,19 @@
     while(flag)
     {
         if(i_end - current[0] > 0) {  //MOVING RIGHT -->
-            if(j_end - current[1] > 1) {  //MOVING LOWER
+            if(j_end - current[1] >= 0) {  //MOVING LOWER
                 current[1] += 1;
                 current[0] += 2;
                 directions.add("LR");
+              //  System.out.print(" LR ");
                 steps++;
             }
+            if(j_end - current[1] < 0) {  //MOVING LOWER
+                    current[1] -= 1;
+                    current[0] += 2;
+                    directions.add("LL");
+                    steps++;
+                }
            
             if(j_end - current[1] < -1) { //MOVING UPPER ^
                 current[1] += 1;
@@ -27,12 +34,6 @@
             }
         }
         else if(i_end - current[0] < 0){ //MOVING LEFT <--
-                if(j_end - current[1] > 1) {  //MOVING LOWER
-                    current[1] -= 1;
-                    current[0] += 2;
-                    directions.add("LL");
-                    steps++;
-                }
                
                 if(j_end - current[1] < -1) { //MOVING UPPER ^
                     current[1] -= 1;
@@ -55,7 +56,7 @@
             }     
                 
         }
-        else {
+        else if(current[0] < 0 || current[1] < 0)  {
             flag = false;
             System.out.print("Impossible");
         }
@@ -63,6 +64,15 @@
         if((current[0] == i_end) && (current[1] == j_end)){
             System.out.print(steps + "\n");
             
+            for(int i = 0; i < directions.size(); i++){
+                System.out.print(directions.get(i) + " ");
+            }
+            
+            flag = false;
+        }
+    }
+
+    }       
             for(int i = 0; i < directions.size(); i++){
                 System.out.print(directions.get(i) + " ");
             }
