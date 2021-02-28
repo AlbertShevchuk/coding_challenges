@@ -72,15 +72,6 @@
         }
     }
 
-    }       
-            for(int i = 0; i < directions.size(); i++){
-                System.out.print(directions.get(i) + " ");
-            }
-            
-            flag = false;
-        }
-    }
-
     }
 
 	
